@@ -8,9 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
-import com.kei.dzikirapp.activity.DzikirHarianActivity
-import com.kei.dzikirapp.activity.DzikirSetiapSaatActivity
-import com.kei.dzikirapp.activity.QauliyahActivity
+import com.kei.dzikirapp.activity.*
 import com.kei.dzikirapp.adapter.ArtikelAdapter
 import com.kei.dzikirapp.adapter.OnItemClickCallback
 import com.kei.dzikirapp.databinding.ActivityMainBinding
@@ -54,7 +52,9 @@ class MainActivity : AppCompatActivity() {
         val artikelAdapter = ArtikelAdapter(artikelArray)
         artikelAdapter.setOnItemClickCallback(object : OnItemClickCallback{
             override fun onItemClicked(data: Artikel) {
-
+                val intent = Intent(applicationContext, DetailArtikelActivity::class.java)
+                intent.putExtra("data", data)
+                startActivity(intent)
             }
         })
         mainBinding.vpArtikel.apply {
@@ -90,7 +90,9 @@ class MainActivity : AppCompatActivity() {
         mainBinding.llDzikirDoaHarian.setOnClickListener {
             startActivity(DzikirHarianActivity.getLaunchService(this))
         }
-        mainBinding.llDzikirPagiPetang.setOnClickListener {}
+        mainBinding.llDzikirPagiPetang.setOnClickListener {
+            startActivity(DzikirPagiPetangActivity.getLaunchService(this))
+        }
         mainBinding.llDzikirSetiapSaat.setOnClickListener {
             startActivity(DzikirSetiapSaatActivity.getLaunchService(this))
         }

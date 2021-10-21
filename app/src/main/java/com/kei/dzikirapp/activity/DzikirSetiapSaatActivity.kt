@@ -37,7 +37,7 @@ class DzikirSetiapSaatActivity : AppCompatActivity() {
         dzikirSetiapSaatBinding.rvDzikirSetiapSaat.setHasFixedSize(true)
     }
     companion object{
-        fun getLaunchService(from : Context)= Intent(from, DzikirPagiPetangActivity::class.java).apply {
+        fun getLaunchService(from : Context)= Intent(from, DzikirSetiapSaatActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         }
     }

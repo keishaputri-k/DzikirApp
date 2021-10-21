@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DzikirApp">
-        <activity android:name=".activity.PetangActivity"></activity>
+        <activity android:name=".activity.DetailArtikelActivity"></activity>
+        <activity android:name=".activity.PetangActivity" />
         <activity android:name=".activity.PagiActivity" />
         <activity android:name=".activity.DzikirSetiapSaatActivity" />
         <activity android:name=".activity.DzikirPagiPetangActivity" />
